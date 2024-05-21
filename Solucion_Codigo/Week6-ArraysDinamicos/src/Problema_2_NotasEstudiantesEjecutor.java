@@ -12,53 +12,55 @@ public class Problema_2_NotasEstudiantesEjecutor {
     public static void main(String[] args) {
         Scanner jaja = new Scanner(System.in);
         ArrayList<Problema_2_Estudiante> stud = new ArrayList<>();
-        ArrayList<Problema_2_Materia> materia = new ArrayList<>();
 
-        System.out.println("Ingresar las materia");
+        System.out.println("Ingresar la cantidad de materias");
         boolean continuar = true;
-        int cont = 0;
-
+        int newcont = 0;
         do {
+            ArrayList<Problema_2_Materia> materia = new ArrayList<>();
+            int cont = 0;
+            do {
 
-            Problema_2_Materia materi = new Problema_2_Materia("Materia" + (cont + 1), generarNota(), generarNota(), generarNota());
-            materia.add(materi);
-            System.out.println("Desea agregar otra materia?");
-            System.out.println("----- Materias agregadas: ----- => "+ cont+1);
-            //jaja.next();
-            if (!jaja.next().equalsIgnoreCase("Si")) {
-                break;
-            }
-            cont++;
-           
-        } while (continuar);
+                Problema_2_Materia materi = new Problema_2_Materia("Materia" + (cont + 1), generarNota(), generarNota(), generarNota());
+                materia.add(materi);
+                System.out.println("Desea agregar otra materia?");
+                System.out.println("----- Materias agregadas: ----- => " + (cont + 1));
+                //jaja.next();
+                if (!jaja.next().equalsIgnoreCase("Si")) {
+                    break;
+                }
+                cont++;
 
-        do {
-
-            Problema_2_Estudiante studi = new Problema_2_Estudiante(generarNombre(), generarEdad());
-
-            studi.addListaMaterias(materia);
-            stud.add(studi);
-
+            } while (continuar);
             
-            if (!jaja.next().equalsIgnoreCase("Si")) {
-                break;
-            }
+            
 
-        } while (continuar);
+                Problema_2_Estudiante studi = new Problema_2_Estudiante(generarNombre(), generarEdad());
 
-        for (Problema_2_Estudiante studi : stud) {
-            for (Problema_2_Materia materi : materia) {
-                if (studi.aprobo(materi)) {
-                    System.out.println("El estudiante " + studi.getName() + " ha aprobado la materia " + materi.getName());
-                } else {
-                    System.out.println("El estudiante " + studi.getName() + " debe rendir un examen de recuperación en la materia " + materi.getName());
+                studi.addListaMaterias(materia);
+                stud.add(studi);
+                System.out.println("Desea agregar otro estudiante?");
+                System.out.println("----- Estudiantes agregados: ----- => " + (newcont + 1));
+
+                if (!jaja.next().equalsIgnoreCase("Si")) {
+                    break;
+                }
+                newcont++;
+            } while (continuar);
+
+            for (Problema_2_Estudiante studi : stud) {
+                for (Problema_2_Materia materi : studi.getMaterias()) {
+                    if (studi.aprobo(materi)) {
+                        System.out.println("El estudiante " + studi.getName() + " ha aprobado la materia " + materi.getName());
+                    } else {
+                        System.out.println("El estudiante " + studi.getName() + " debe rendir un examen de recuperación en la materia " + materi.getName());
+                    }
                 }
             }
-        }
-    }
+        } // IGNORAR. ESTO ES OPCIONAL 
+        // Funciones que usamos solo para automatizar el programa. Esto es opcional 
 
-    // IGNORAR. ESTO ES OPCIONAL 
-    // Funciones que usamos solo para automatizar el programa. Esto es opcional 
+
     public static int generarEdad() {
         Random r = new Random();
         int[] edades = {15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85};
@@ -79,7 +81,7 @@ public class Problema_2_NotasEstudiantesEjecutor {
 
     public static double generarNota() {
         Random r = new Random();
-        double nota = 3.5 + (r.nextDouble() * (10 - 3.5)); // Limite inferior 3.5 , superior 10
+        double nota = 1 + (r.nextDouble() * (3.5 - 1)); // Limite inferior 1 , superior 3.5
         return nota;
     }
 }
