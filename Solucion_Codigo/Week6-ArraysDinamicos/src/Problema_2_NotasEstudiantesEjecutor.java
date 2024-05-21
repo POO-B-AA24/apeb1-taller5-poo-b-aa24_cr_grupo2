@@ -5,28 +5,46 @@
  */
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Problema_2_NotasEstudiantesEjecutor {
 
     public static void main(String[] args) {
-
+        Scanner jaja = new Scanner(System.in);
         ArrayList<Problema_2_Estudiante> stud = new ArrayList<>();
         ArrayList<Problema_2_Materia> materia = new ArrayList<>();
 
-        System.out.println("Ingrese la materia");
+        System.out.println("Ingresar las materia");
         boolean continuar = true;
         int cont = 0;
+
+        do {
+
+            Problema_2_Materia materi = new Problema_2_Materia("Materia" + (cont + 1), generarNota(), generarNota(), generarNota());
+            materia.add(materi);
+            System.out.println("Desea agregar otra materia?");
+            System.out.println("----- Materias agregadas: ----- => "+ cont+1);
+            //jaja.next();
+            if (!jaja.next().equalsIgnoreCase("Si")) {
+                break;
+            }
+            cont++;
+           
+        } while (continuar);
+
         do {
 
             Problema_2_Estudiante studi = new Problema_2_Estudiante(generarNombre(), generarEdad());
-            Problema_2_Materia materi = new Problema_2_Materia("Materia" + (cont + 1), generarNota(), generarNota(), generarNota());
-            System.out.println("Desea agregar otra materia?");
-            studi.addMateria(materi);
-            stud.add(studi);
-            materia.add(materi);
-            cont++;
 
-        } while (continuar == true);
+            studi.addListaMaterias(materia);
+            stud.add(studi);
+
+            
+            if (!jaja.next().equalsIgnoreCase("Si")) {
+                break;
+            }
+
+        } while (continuar);
 
         for (Problema_2_Estudiante studi : stud) {
             for (Problema_2_Materia materi : materia) {

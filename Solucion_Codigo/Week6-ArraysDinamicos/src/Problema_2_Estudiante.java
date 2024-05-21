@@ -11,7 +11,7 @@ public class Problema_2_Estudiante {
 
     private String nombre;
     private int edad;
-    private ArrayList<Problema_2_Materia> materia;
+    private ArrayList<Problema_2_Materia> materia = new ArrayList<>();
 
     // otros atributos
     
@@ -28,8 +28,8 @@ public class Problema_2_Estudiante {
         this.materia.add() materia;
     }*/ // Esta porcion queda obsoleta
     
-    public void addMateria(Problema_2_Materia materia) {
-        this.materia.add(materia);
+    public void addListaMaterias(ArrayList<Problema_2_Materia> materia) {
+        this.materia=(materia);
     }
 
     public boolean aprobo(Problema_2_Materia materia) {
