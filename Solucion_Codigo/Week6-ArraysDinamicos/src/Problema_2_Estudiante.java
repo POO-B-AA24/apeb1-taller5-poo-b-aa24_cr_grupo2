@@ -10,28 +10,21 @@ public class Problema_2_Estudiante {
 
     private String nombre;
     private int edad;
-    private ArrayList<Problema_2_Materia> materia = new ArrayList<>();
+    private Problema_2_Materia[] materia;
 
     // otros atributos
-    public Problema_2_Estudiante(String nombre, int edad) {
+    public Problema_2_Estudiante(String nombre, int edad, Problema_2_Materia[] materia) {
         this.nombre = nombre;
         this.edad = edad;
+        this.materia = materia;
     }
 
     public String getName() {
         return nombre;
     }
 
-    /*
-    public void setMateria(Problema_2_Materia materia) {
-        this.materia.add() materia;
-    }*/ // Esta porcion queda obsoleta
 
-    public void addListaMaterias(ArrayList<Problema_2_Materia> materia) {
-        this.materia = (materia);
-    }
-
-    public ArrayList<Problema_2_Materia> getMaterias() {
+    public Problema_2_Materia[] getMaterias() {
         return this.materia;
     }
 

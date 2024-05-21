@@ -14,52 +14,49 @@ public class Problema_2_NotasEstudiantesEjecutor {
         ArrayList<Problema_2_Estudiante> stud = new ArrayList<>();
 
         System.out.println("Ingresar la cantidad de materias");
+        int nMaterias = jaja.nextInt();
         boolean continuar = true;
         int newcont = 0;
         do {
-            ArrayList<Problema_2_Materia> materia = new ArrayList<>();
+            Problema_2_Materia[] materia = new Problema_2_Materia[nMaterias]; // un arreglo de materias por estudiante. Asi las notas seran diferentes para cada uno.
             int cont = 0;
             do {
 
                 Problema_2_Materia materi = new Problema_2_Materia("Materia" + (cont + 1), generarNota(), generarNota(), generarNota());
-                materia.add(materi);
-                System.out.println("Desea agregar otra materia?");
-                System.out.println("----- Materias agregadas: ----- => " + (cont + 1));
+                materia[cont] = (materi);
+                System.out.println("Agrege datos de materia ----- =>"+ (cont + 1));
+                System.out.println("----- Materias con datos: ----- => " + (cont + 1));
                 //jaja.next();
-                if (!jaja.next().equalsIgnoreCase("Si")) {
+                if (cont >= nMaterias) {
                     break;
                 }
                 cont++;
 
-            } while (continuar);
-            
-            
+            } while (cont < nMaterias);
 
-                Problema_2_Estudiante studi = new Problema_2_Estudiante(generarNombre(), generarEdad());
+            Problema_2_Estudiante studi = new Problema_2_Estudiante(generarNombre(), generarEdad(), materia);
 
-                studi.addListaMaterias(materia);
-                stud.add(studi);
-                System.out.println("Desea agregar otro estudiante?");
-                System.out.println("----- Estudiantes agregados: ----- => " + (newcont + 1));
+            stud.add(studi);
+            System.out.println("Desea agregar otro estudiante?");
+            System.out.println("----- Estudiantes agregados: ----- => " + (newcont + 1));
 
-                if (!jaja.next().equalsIgnoreCase("Si")) {
-                    break;
-                }
-                newcont++;
-            } while (continuar);
+            if (!jaja.next().equalsIgnoreCase("Si")) {
+                break;
+            }
+            newcont++;
+        } while (continuar);
 
-            for (Problema_2_Estudiante studi : stud) {
-                for (Problema_2_Materia materi : studi.getMaterias()) {
-                    if (studi.aprobo(materi)) {
-                        System.out.println("El estudiante " + studi.getName() + " ha aprobado la materia " + materi.getName());
-                    } else {
-                        System.out.println("El estudiante " + studi.getName() + " debe rendir un examen de recuperación en la materia " + materi.getName());
-                    }
+        for (Problema_2_Estudiante studi : stud) {
+            for (Problema_2_Materia materi : studi.getMaterias()) {
+                if (studi.aprobo(materi)) {
+                    System.out.println("El estudiante " + studi.getName() + " ha aprobado la materia " + materi.getName());
+                } else {
+                    System.out.println("El estudiante " + studi.getName() + " debe rendir un examen de recuperacion en la materia " + materi.getName());
                 }
             }
-        } // IGNORAR. ESTO ES OPCIONAL 
-        // Funciones que usamos solo para automatizar el programa. Esto es opcional 
-
+        }
+    } // IGNORAR. ESTO ES OPCIONAL 
+    // Funciones que usamos solo para automatizar el programa. Esto es opcional 
 
     public static int generarEdad() {
         Random r = new Random();
