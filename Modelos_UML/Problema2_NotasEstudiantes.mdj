@@ -74,7 +74,7 @@
 											"top": 178,
 											"width": 566.8837890625,
 											"height": 13,
-											"text": "(from JavaReverse)"
+											"text": "(from Taller6)"
 										},
 										{
 											"_type": "LabelView",
@@ -348,7 +348,7 @@
 											"top": 373,
 											"width": 532.20654296875,
 											"height": 13,
-											"text": "(from JavaReverse)"
+											"text": "(from Taller6)"
 										},
 										{
 											"_type": "LabelView",
@@ -945,7 +945,7 @@
 											"top": 22,
 											"width": 242.7470703125,
 											"height": 13,
-											"text": "(from JavaReverse)"
+											"text": "(from Taller6)"
 										},
 										{
 											"_type": "LabelView",
@@ -1416,7 +1416,7 @@
 			"_parent": {
 				"$ref": "AAAAAAFF+h6SjaM2Hec="
 			},
-			"name": "JavaReverse",
+			"name": "Taller6",
 			"ownedElements": [
 				{
 					"_type": "UMLClass",
