@@ -1,0 +1,59 @@
+�Desea ingresar otra persona? (Si / No)
+SI
+�Desea ingresar otra persona? (Si / No)
+SI
+�Desea ingresar otra persona? (Si / No)
+SI
+�Desea ingresar otra persona? (Si / No)
+no
+Personas implicadas en el Caso 1:
+Caso1 Persona 2 (acusado)
+Caso1 Persona 4 (acusado)
+Estado del Caso 1: Alerta
+�Desea ingresar otro caso? (Si / No)
+si
+�Desea ingresar otra persona? (Si / No)
+si
+�Desea ingresar otra persona? (Si / No)
+si
+�Desea ingresar otra persona? (Si / No)
+no
+Personas implicadas en el Caso 2:
+Caso2 Persona 2 (acusado)
+Estado del Caso 2: Alerta
+�Desea ingresar otro caso? (Si / No)
+si
+�Desea ingresar otra persona? (Si / No)
+si
+�Desea ingresar otra persona? (Si / No)
+si
+�Desea ingresar otra persona? (Si / No)
+no
+Personas implicadas en el Caso 3:
+Caso3 Persona 2 (acusado)
+Estado del Caso 3: Iniciado
+�Desea ingresar otro caso? (Si / No)
+si
+�Desea ingresar otra persona? (Si / No)
+si
+�Desea ingresar otra persona? (Si / No)
+si
+�Desea ingresar otra persona? (Si / No)
+no
+Personas implicadas en el Caso 4:
+Caso4 Persona 2 (acusado)
+Estado del Caso 4: Urgente
+�Desea ingresar otro caso? (Si / No)
+si
+�Desea ingresar otra persona? (Si / No)
+si
+�Desea ingresar otra persona? (Si / No)
+si
+�Desea ingresar otra persona? (Si / No)
+no
+Personas implicadas en el Caso 5:
+Caso5 Persona 2 (acusado)
+Estado del Caso 5: Iniciado
+�Desea ingresar otro caso? (Si / No)
+no
+BUILD SUCCESSFUL (total time: 20 seconds)
