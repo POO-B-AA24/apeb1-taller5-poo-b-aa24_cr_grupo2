@@ -4,15 +4,15 @@ import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class Problema4_CasoCorrupcion {
+public class Problema_4_CasoCorrupcion {
 
     private String name;
     private LocalDate date;
     ;
     private String estado;
-    private ArrayList<Problema4_PersonaImplicada> personasImplicadas;
+    private ArrayList<Problema_4_PersonaImplicada> personasImplicadas;
 
-    public Problema4_CasoCorrupcion(String name, LocalDate date, String estado) {
+    public Problema_4_CasoCorrupcion(String name, LocalDate date, String estado) {
         this.name = name;
         this.date = date;
         this.estado = estado;
@@ -26,7 +26,7 @@ public class Problema4_CasoCorrupcion {
         return this.estado;
     }
 
-    public void addPersonasImplicadas(Problema4_PersonaImplicada persona) {
+    public void addPersonasImplicadas(Problema_4_PersonaImplicada persona) {
         this.personasImplicadas.add(persona);
 
     }
@@ -48,31 +48,31 @@ public class Problema4_CasoCorrupcion {
     
     // Esto reemplazo el imprimir gente implicada:
         public void imprimirPersonasImplicadas() {
-        for (Problema4_PersonaImplicada persona : this.personasImplicadas) {
+        for (Problema_4_PersonaImplicada persona : this.personasImplicadas) {
             System.out.println(persona.getName() + " (" + persona.getImplicacion() + ")");
         }
     }
 
     // String buildersito
-    public String toString(ArrayList<Problema4_PersonaImplicada> personas) {
+    public String toString(ArrayList<Problema_4_PersonaImplicada> personas) {
         StringBuilder sb = new StringBuilder();
         sb.append("CasoCorrupcion{");
         sb.append("name=").append(name);
         sb.append(", date=").append(date);
         sb.append(", estado=").append(estado);
         sb.append('}');
-        for (Problema4_PersonaImplicada persona : personas) {
+        for (Problema_4_PersonaImplicada persona : personas) {
             sb.append(" Persona implicadas = ").append(persona.toString());
 
         }
         return sb.toString();
     }
 
-    public void setPersonasImplicadas(ArrayList<Problema4_PersonaImplicada> personasImplicadas) {
+    public void setPersonasImplicadas(ArrayList<Problema_4_PersonaImplicada> personasImplicadas) {
         this.personasImplicadas = personasImplicadas;
     }
 
-    public ArrayList<Problema4_PersonaImplicada> getPersonasImplicadas() {
+    public ArrayList<Problema_4_PersonaImplicada> getPersonasImplicadas() {
         return this.personasImplicadas;
     }
 

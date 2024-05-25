@@ -1,19 +1,19 @@
-public class Ejercicio_5_Eventos {
+public class Problema_5_Eventos {
     String nombreEven;
     String fechaOcu;
     String ubi;
     String tipo;
     String descripcion;
     boolean armn;
-    int muertes;
-    public Ejercicio_5_Eventos(String nombreEven, String fechaOcu, String ubi,String tipo, String descripcion, boolean armas, int muertes) {
+    int muertesComoPorcentajeDelPais;
+    public Problema_5_Eventos(String nombreEven, String fechaOcu, String ubi,String tipo, String descripcion, boolean armas, int muertes) {
         this.nombreEven = nombreEven;
         this.fechaOcu = fechaOcu;
         this.ubi = ubi;
         this.tipo = tipo;
         this.descripcion = descripcion;
         this.armn=armas;
-        this.muertes = muertes;
+        this.muertesComoPorcentajeDelPais = muertes;
     }
     public String getNombre() {
         return nombreEven;
@@ -40,10 +40,10 @@ public class Ejercicio_5_Eventos {
     }
 
     public int getBajasPorcentuales() {
-        return muertes;
+        return muertesComoPorcentajeDelPais;
     }  
     @Override
     public String toString() {
-        return "Evento{" + "nombre=" + nombreEven + ", fecha=" + fechaOcu + ", ubicacion=" + ubi + ", tipo=" + tipo + ", descripcion=" + descripcion + ", usaArmasNucleares=" + armn + ", bajasPorcentuales=" + muertes + '}';
+        return "Evento{" + "nombre=" + nombreEven + ", fecha=" + fechaOcu + ", ubicacion=" + ubi + ", tipo=" + tipo + ", descripcion=" + descripcion + ", usaArmasNucleares=" + armn + ", bajasPorcentuales=" + muertesComoPorcentajeDelPais + '}';
     }
 }

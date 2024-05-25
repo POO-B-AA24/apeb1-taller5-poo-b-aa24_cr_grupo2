@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class Problema4_PersonaImplicada {
+public class Problema_4_PersonaImplicada {
 
     private String name;
     private int age;
@@ -12,7 +12,7 @@ public class Problema4_PersonaImplicada {
     private double fianza;
     private double damageCaused;
 
-    public Problema4_PersonaImplicada(String name, int age, String ocupacion, String implicacion) {
+    public Problema_4_PersonaImplicada(String name, int age, String ocupacion, String implicacion) {
         this.name = name;
         this.age = age;
         this.ocupacion = ocupacion;

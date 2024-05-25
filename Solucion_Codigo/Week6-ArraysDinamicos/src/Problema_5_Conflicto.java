@@ -1,26 +1,32 @@
+
 import java.util.ArrayList;
+
 public class Problema_5_Conflicto {
+
     String nombConfli;
-    ArrayList<String> paisesInvo;
+    ArrayList<Problema5_Paises> paisesInvo;
     String fechaIni;
     String estadoAc;
-    ArrayList<Ejercicio_5_Eventos> eventos;
-    public Problema_5_Conflicto(String nombCofli, ArrayList<String> paisesInvo, String fechaIni) {
+    ArrayList<Problema_5_Eventos> eventos;
+
+    public Problema_5_Conflicto(String nombCofli, ArrayList<Problema5_Paises> paisesInvo, String fechaIni) {
         this.nombConfli = nombCofli;
         this.paisesInvo = paisesInvo;
         this.fechaIni = fechaIni;
         this.estadoAc = "Activo";
         this.eventos = new ArrayList<>();
     }
-    public void agEvento(Ejercicio_5_Eventos evento) {
+
+    public void agEvento(Problema_5_Eventos evento) {
         eventos.add(evento);
         actualizar();
     }
+
     public void actualizar() {
         int totalPaises = paisesInvo.size();
         ArrayList<String> pc = new ArrayList<>();
-        for (Ejercicio_5_Eventos evento : eventos) {
-            if (evento.getTipo().equals("Batalla") && !pc.contains(evento.getUbicacion())) {
+        for (Problema_5_Eventos evento : eventos) {
+            if (evento.getTipo().equals("Batalla") && !pc.contains(evento.getUbicacion())) { // dont know if it was needed at all (second conditional)
                 pc.add(evento.getUbicacion());
             }
         }
@@ -30,9 +36,16 @@ public class Problema_5_Conflicto {
         } else if (ppc >= 0.3) {
             estadoAc = "Reunión Urgente";
         }
-        String[] paisesPrimerMundo = {"EEUU", "Rusia", "Reino Unido", "Francia", "Portoviejo"};
+
+        for (Problema5_Paises paisa : paisesInvo) { // flag
+            if (paisa.getPercentPoblacionAsesinada() >= 0.50) {
+                estadoAc = "Reunión Urgente";
+                break;
+            }
+        }
+        String[] paisesPrimerMundo = {"EEUU", "Rusia", "Reino Unido", "Francia", "Portugal"};
         boolean bn = false;
-        for (Ejercicio_5_Eventos evento : eventos) {
+        for (Problema_5_Eventos evento : eventos) {
             for (String pais : paisesPrimerMundo) {
                 if (evento.getUbicacion().equals(pais) && evento.siUsaArmasNucleares()) {
                     bn = true;
@@ -43,16 +56,13 @@ public class Problema_5_Conflicto {
         if (bn) {
             estadoAc = "Guerra Mundial";
         }
-        for (Ejercicio_5_Eventos evento : eventos) {
-            if (evento.getBajasPorcentuales() >= 50) {
-                estadoAc = "Reunión Urgente";
-                break;
-            }
-        }
+
     }
-    public ArrayList<Ejercicio_5_Eventos> consultarEventos() {
+
+    public ArrayList<Problema_5_Eventos> consultarEventos() {
         return eventos;
     }
+
     public String getNombre() {
         return nombConfli;
     }

@@ -4,11 +4,11 @@ import java.util.Scanner;
 import java.time.LocalDate;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Problema4_TestCorrupcion {
+public class Problema_4_TestCorrupcion {
 
     public static void main(String[] args) {
 
-        ArrayList<Problema4_CasoCorrupcion> casos = new ArrayList<>();
+        ArrayList<Problema_4_CasoCorrupcion> casos = new ArrayList<>();
         Scanner in = new Scanner(System.in);
         boolean continuarCasos, continuarGente;
 
@@ -27,15 +27,15 @@ public class Problema4_TestCorrupcion {
             // caso de corrupcion
             LocalDate randomDate = LocalDate.ofEpochDay(randomDay); // fecha autogenerada jeje.
             // Ignorar la linea de arriba, es para hacer mas cheto el programa
-            Problema4_CasoCorrupcion caso = new Problema4_CasoCorrupcion("Caso " + i, randomDate, "Iniciado");
+            Problema_4_CasoCorrupcion caso = new Problema_4_CasoCorrupcion("Caso " + i, randomDate, "Iniciado");
             casos.add(caso);
 
-            ArrayList<Problema4_PersonaImplicada> personas = new ArrayList<>(); // cada caso tiene su propio arraylist
+            ArrayList<Problema_4_PersonaImplicada> personas = new ArrayList<>(); // cada caso tiene su propio arraylist
             int j = 1; // contador de personas
 
             do {
                 continuarGente = true;
-                Problema4_PersonaImplicada persona = new Problema4_PersonaImplicada("Caso" + i + " Persona " + j, 30 + j, "Ocupacion " + j, j % 2 == 0 ? "acusado" : "testigo"); // Solo hacemos que personas pares sean acusados, los impares son testigos
+                Problema_4_PersonaImplicada persona = new Problema_4_PersonaImplicada("Caso" + i + " Persona " + j, 30 + j, "Ocupacion " + j, j % 2 == 0 ? "acusado" : "testigo"); // Solo hacemos que personas pares sean acusados, los impares son testigos
                 personas.add(persona);
 
                 if (persona.getImplicacion().equals("acusado")) {
