@@ -58,7 +58,7 @@ public class Problema_1_CarritodeCompras {
 
         System.out.println("Detalle de la compra:");
         for (Problema_1_Producto producto : productosDelCliente) {
-            System.out.println(producto.getNombre() + " - Cantidad: " + producto.getCantidad() + " - Precio: $" + String.format("%.2f", producto.getPrecio()));
+            System.out.println(producto.getNombre() + " - Cantidad: " + producto.getCantidad() + " - Precio: $" + String.format("%.2f", producto.getPrecio())); // Useful feature, use formating inside a println method : Casting String.format methods
         }
         System.out.println("Total: $" + String.format("%.2f", total));
     }
